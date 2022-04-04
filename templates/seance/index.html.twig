@@ -1,0 +1,84 @@
+{% extends 'home/index.html.twig' %}
+
+{% block title %}Seance{% endblock %}
+
+{% block section %}
+   {#  <h1>Seance index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for seance in seances %}
+            <tr>
+
+                    <a href="{{ path('app_seance_show', {'id': seance.id}) }}">show</a>
+                    <a href="{{ path('app_seance_edit', {'id': seance.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>#}
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Schedule</h3>
+
+
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Jour</th>
+                        <th>Heure_debut</th>
+                        <th>Heure_fin</th>
+                        <th>Matter</th>
+                        <th>Teacher</th>
+                        <th>Class</th>
+                        <th>Classroom</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for seance in seances %}
+                        <tr>
+                            <td>{{ seance.id }}</td>
+                            <td>{{ seance.jour }}</td>
+                            <td>{{ seance.heureDebut }}</td>
+                            <td>{{ seance.heureFin }}</td>
+                            <td>{{ seance.matter }}</td>
+                            <td>{{ seance.teacher }}</td>
+                            <td>{{ seance.class }}</td>
+                            <td>{{ seance.classroom }}</td>
+                            <td>
+                                <div style="display: inline-block">
+                                <a class="btn btn-secondary" href="{{ path('app_seance_show', {'id': seance.id}) }}">show</a>
+                                <a class="btn btn-info" href="{{ path('app_seance_edit', {'id': seance.id}) }}">edit</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="9">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a class="btn btn-block btn-outline-primary btn-lg"  href="{{ path('app_seance_new') }}"">Create new</a>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seance{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 >Seance</h1>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ seance.id }}</td>
+            </tr>
+            <tr>
+                <th>Jour</th>
+                <td>{{ seance.jour }}</td>
+            </tr>
+            <tr>
+                <th>Heure_debut</th>
+                <td>{{ seance.heureDebut }}</td>
+            </tr>
+            <tr>
+                <th>Heure_fin</th>
+                <td>{{ seance.heureFin }}</td>
+            </tr>
+            <tr>
+                <th>Matter</th>
+                <td>{{ seance.matter }}</td>
+            </tr>
+            <tr>
+                <th>Teacher</th>
+                <td>{{ seance.teacher }}</td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>{{ seance.class }}</td>
+            </tr>
+            <tr>
+                <th>Classroom</th>
+                <td>{{ seance.classroom }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+    <a class="btn btn-outline-dark" href="{{ path('app_seance_index') }}">back to list</a>
+
+    <a class="btn btn-info" href="{{ path('app_seance_edit', {'id': seance.id}) }}">edit</a>
+
+    {{ include('seance/_delete_form.html.twig') }}
+</div>
+{% endblock %}

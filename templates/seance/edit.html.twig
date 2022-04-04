@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Seance{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>Edit Seance</h1>
+    <div style="display:inline-block">
+    {{ include('seance/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('seance/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}
